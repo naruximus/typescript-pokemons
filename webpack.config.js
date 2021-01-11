@@ -44,7 +44,7 @@ module.exports = {
     })
   ],
   devServer: {
-    port: 3000, 
+    port: 4000, 
     open: 'Google Chrome', 
     hot: true
   },
