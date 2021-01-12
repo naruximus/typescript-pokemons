@@ -1,52 +1,58 @@
 const path = require('path');
-const HTMLWebpackPlugins = require('html-webpack-plugin')
+const HTMLWebpackPlugins = require('html-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
-  resolve:{
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
   mode: NODE_ENV ? NODE_ENV : 'development',
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: path.resolve(__dirname, 'src/index.ts'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
   },
   module: {
-    rules:[
+    rules: [
       {
-        test:/\.[tj]sx?$/,
+        test: /\.[tj]sx?$/,
+        exclude: /node_modules/,
         use: ['ts-loader'],
       },
       {
-        test: /\.(s*)css$/,
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
         use: [
-          'style-loader', 
+          'style-loader',
+          'css-modules-typescript-loader?modules',
           {
             loader: 'css-loader',
-            options:{
+            options: {
               modules: {
-                mode:'local', 
+                mode: 'local',
                 localIdentName: '[name]__[local]__[hash:base64:5]',
-                auto: /\.modules\.\w+$/i,
-              }
-            }
+                auto: /\.module\.\w+$/i,
+              },
+            },
           },
-          'sass-loader'
-          ]
-      }
-    ]
+          'sass-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new HTMLWebpackPlugins({
-      template: path.resolve(__dirname, 'public/index.html')
-    })
+      template: path.resolve(__dirname, 'public/index.html'),
+    }),
   ],
   devServer: {
-    port: 4000, 
-    open: 'Google Chrome', 
-    hot: true
+    port: 4000,
+    open: 'Google Chrome',
+    hot: true,
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
 };
