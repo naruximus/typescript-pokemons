@@ -1,8 +1,5 @@
 import React from 'react';
 
-import style from './App.module.scss';
+import { HomePage } from './pages';
 
-export const App = () => {
-  console.log('123');
-  return <div className={style.header}>Yeah, This is App Component</div>;
-};
+export const App = () => <HomePage />;

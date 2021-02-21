@@ -13,6 +13,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
   },
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+    poll: 1000,
+  },
   module: {
     rules: [
       {
@@ -42,6 +47,10 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
     ],
   },
   plugins: [
@@ -51,7 +60,7 @@ module.exports = {
   ],
   devServer: {
     port: 4000,
-    open: 'Google Chrome',
+    // open: 'Google Chrome',
     hot: true,
   },
   devtool: 'source-map',

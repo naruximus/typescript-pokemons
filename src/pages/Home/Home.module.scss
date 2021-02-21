@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.root {
+  min-height: 100vh;
+  background: linear-gradient(180deg, $third 0%, $primary 100%);
+}
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
