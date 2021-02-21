@@ -7,8 +7,10 @@ export const Footer = () => {
 
   return (
     <div className={style.root}>
-      <p>Make with ❤️</p>
-      <p>Ours Team</p>
+      <div className={style.wrap}>
+        <h3 className={style.text}>Make with ❤️</h3>
+        <h3 className={style.text}>Ours Team</h3>
+      </div>
     </div>
   );
 };
