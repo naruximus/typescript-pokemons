@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import style from './Pokedex.module.scss';
-import { Heading, Footer } from '../../components';
+import { Heading, Footer, Loader } from '../../components';
 import { PokemonCard } from './components';
 import { useData } from '../../hooks/getData';
 
 import { IPokemons, IPokemon } from '../../interface/pokemons';
 import { useDebounce } from '../../hooks/useDebounce';
-import { Pokeball } from './assets';
 
 interface IQuery {
   name?: string;
@@ -30,14 +29,12 @@ export const Pokedex = () => {
     }));
   };
 
-  // if (isLoading) return <div>Loading...</div>;
-
   if (isError) return <div>Error!</div>;
 
   return (
     <div className={style.root}>
       <Heading component="h2" className={style.title}>
-        {!isLoading && data && data.total} <b>Pokemons</b> for you to choose your favorite
+        {(!isLoading && data && data.total) || 0} <b>Pokemons</b> for you to choose your favorite
       </Heading>
       <div className={style.contentWrap}>
         <input
@@ -51,9 +48,7 @@ export const Pokedex = () => {
         {!isLoading && data ? (
           data.pokemons.map((pokemon: IPokemon) => <PokemonCard key={pokemon.id} pokemon={pokemon} />)
         ) : (
-          <div className={style.loaderWrap}>
-            <img src={Pokeball} alt="Loading..." />
-          </div>
+          <Loader />
         )}
       </div>
       <Footer />
