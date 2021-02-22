@@ -16,7 +16,7 @@ export const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth = f
     type="button"
     className={cn(style.root, style[color])}
     onClick={onClick}
-    style={{ width: fullWidth ? '100%' : 'auto' }}>
+    style={{ width: fullWidth ? '100%' : '231px' }}>
     {children}
   </button>
 );

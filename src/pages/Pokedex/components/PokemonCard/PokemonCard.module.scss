@@ -1,0 +1,117 @@
+.root {
+  width: 351px;
+  height: 136px;
+  background: #f6f7f9;
+  border-radius: 8px;
+  margin-bottom: 45px;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+  filter: drop-shadow(4px 4px 4px rgba(33, 33, 33, 0.1));
+  // overflow: hidden;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.03);
+    transition: all ease-in-out 0.25s;
+  }
+}
+.infoWrap {
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  top: 0px;
+  left: 25px;
+}
+.titleName {
+  margin-bottom: 12px;
+  text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+}
+.statsWrap {
+  display: flex;
+  margin-bottom: 12px;
+}
+.statsItem {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #4b4b4b;
+  margin-right: 12px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.statsValue {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #212121;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #212121;
+}
+.labelWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.labelItem {
+  width: 74px;
+  height: 16px;
+  background: #73d677;
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+  border-radius: 11px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+
+  color: #212121;
+  margin-right: 12px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.pictureWrap {
+  background: linear-gradient(270deg, #f2cb07 0.15%, #f2b807 100%);
+  border-radius: 0px 8px 8px 0px;
+  width: 60%;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+
+  img {
+    width: 85%;
+  }
+}
+.grass,
+.bug {
+  background: linear-gradient(270deg, #70a83b 0.15%, #70a83b 100%);
+}
+.fire,
+.flying {
+  background: linear-gradient(270deg, #f76545 0.15%, #f76545 100%);
+}
+.water {
+  background: linear-gradient(270deg, #76aadb 0.15%, #76aadb 100%);
+}
+.poison {
+  background: linear-gradient(270deg, #a974bc 0.15%, #a974bc 100%);
+}

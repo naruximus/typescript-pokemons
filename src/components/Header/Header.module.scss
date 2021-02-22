@@ -55,7 +55,8 @@
     transform: translate(-50%, 0);
   }
 
-  &:hover {
+  &:hover,
+  &.activeLink {
     &:after {
       width: 100%;
       opacity: 1;

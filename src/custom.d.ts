@@ -1,3 +1,7 @@
+declare module '*.scss' {
+  const styles: { [className: string]: string };
+  export default styles;
+}
 declare module 'hookrouter';
 declare module '*.svg' {
   import React = require('react');

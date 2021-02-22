@@ -1,0 +1,53 @@
+@import '../../variables';
+
+.root {
+  height: 100vh;
+  background: $danger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error404 {
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 700px;
+  line-height: 818px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 4px;
+
+  color: rgba(0, 0, 0, 0.5);
+
+  position: relative;
+}
+.rocketTeam {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  max-height: 620px;
+}
+.text {
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+
+  color: #f2f2f2;
+
+  margin-bottom: 80px;
+  margin-top: -80px;
+}
+
+.textBlack {
+  color: #000;
+}
