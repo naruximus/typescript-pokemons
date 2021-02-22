@@ -37,7 +37,7 @@ export const PokemonCard: React.FC<IPokemonCardProps> = ({ pokemon }) => {
         </div>
         <div className={style.labelWrap}>
           {types.map((type) => (
-            <div className={cn(style.labelItem)}>{type}</div>
+            <div className={cn(style.labelItem, style[type])}>{type}</div>
           ))}
         </div>
       </div>
