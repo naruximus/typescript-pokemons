@@ -1,5 +1,7 @@
-import React from 'react';
+import { useRoutes } from 'hookrouter';
+import { routes } from './routes';
 
-import { HomePage } from './pages';
-
-export const App = () => <HomePage />;
+export const App = () => {
+  const match = useRoutes(routes);
+  return match;
+};
