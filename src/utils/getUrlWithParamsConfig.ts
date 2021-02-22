@@ -1,4 +1,3 @@
-import Url from 'url';
 import { config } from '../config';
 
 export const getUrlWithParamsConfig = (endPointConfig: string, query: object) => {
