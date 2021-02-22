@@ -6,7 +6,7 @@ import style from './Header.module.scss';
 import { ReactComponent as Logo } from './assets/Logo.svg';
 import { GENERAL_MENU } from '../../routes';
 
-export const Header = () => {
+export const Header = React.memo(() => {
   const path = usePath();
 
   return (
@@ -30,4 +30,4 @@ export const Header = () => {
       </div>
     </div>
   );
-};
+});

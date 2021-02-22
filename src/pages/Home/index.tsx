@@ -2,7 +2,7 @@ import React from 'react';
 import { navigate } from 'hookrouter';
 
 import style from './Home.module.scss';
-import { Header, Footer, Layout, Button, Heading } from '../../components';
+import { Footer, Layout, Button, Heading } from '../../components';
 import { Parallax } from './components';
 import { LinkEnum } from '../../routes';
 
@@ -10,7 +10,6 @@ export const Home = () => {
   console.log('home :>> ');
   return (
     <div className={style.root}>
-      <Header />
       <Layout className={style.contentWrap}>
         <div className={style.contentText}>
           <Heading component="h1">
