@@ -101,6 +101,12 @@
     width: 85%;
   }
 }
+
+.Stile,
+.dark,
+.rock {
+  background: linear-gradient(270deg, #a1a1a1 0.15%, #a1a1a1 100%);
+}
 .grass,
 .bug {
   background: linear-gradient(270deg, #70a83b 0.15%, #70a83b 100%);
@@ -109,9 +115,23 @@
 .flying {
   background: linear-gradient(270deg, #f76545 0.15%, #f76545 100%);
 }
-.water {
+.water,
+.ice {
   background: linear-gradient(270deg, #76aadb 0.15%, #76aadb 100%);
 }
+.psychic,
+.fairy,
+.ghost,
 .poison {
   background: linear-gradient(270deg, #a974bc 0.15%, #a974bc 100%);
+}
+.normal,
+.gosth {
+  background: linear-gradient(270deg, #76aadb 0.15%, #76aadb 100%);
+}
+.ground {
+  background: linear-gradient(270deg, #9b897b 0.15%, #9b897b 100%);
+}
+.electric {
+  background: linear-gradient(270deg, #f7c545 0.15%, #f7c545 100%);
 }
