@@ -3,10 +3,10 @@ import cn from 'classnames';
 
 import { Heading } from '../../../../components';
 import style from './PokemonCard.module.scss';
-import { IPokemons } from '../../pokemons';
+import { IPokemon } from '../../../../interface/pokemons';
 
 interface IPokemonCardProps {
-  pokemon: IPokemons;
+  pokemon: IPokemon;
 }
 
 export const PokemonCard: React.FC<IPokemonCardProps> = ({ pokemon }) => {
