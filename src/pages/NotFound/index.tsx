@@ -4,6 +4,7 @@ import { navigate } from 'hookrouter';
 import style from './NotFound.module.scss';
 import { Button } from '../../components';
 import { RocketTeam } from './assets';
+import { LinkEnum } from '../../routes';
 
 export const NotFound = () => (
   <div className={style.root}>
@@ -17,7 +18,7 @@ export const NotFound = () => (
       <div className={style.text}>
         The rocket team <span className={style.textBlack}>has won this time.</span>
       </div>
-      <Button onClick={() => navigate('/')} color="yellow">
+      <Button onClick={() => navigate(LinkEnum.HOME)} color="yellow">
         Return
       </Button>
     </div>
