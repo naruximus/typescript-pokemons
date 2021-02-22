@@ -3,18 +3,18 @@ import cn from 'classnames';
 
 import style from './Heading.module.scss';
 
-type levelType = 1 | 2 | 3 | 4 | 5 | 6;
+type componentType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 interface HeadingProps {
   className?: string;
-  level: levelType;
+  component: componentType;
 }
 
-export const Heading: React.FC<HeadingProps> = ({ children, className = null, level }) =>
+export const Heading: React.FC<HeadingProps> = ({ children, className = null, component }) =>
   React.createElement(
-    `h${level}`,
+    component,
     {
-      className: cn(style.root, style[`h${level}`], className),
+      className: cn(style.root, style[component], className),
     },
     children,
   );

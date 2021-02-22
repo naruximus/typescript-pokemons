@@ -14,7 +14,7 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth = false, color = 'green' }) => (
   <button
     type="button"
-    className={cn(style.root, style[`${color}`])}
+    className={cn(style.root, style[color])}
     onClick={onClick}
     style={{ width: fullWidth ? '100%' : 'auto' }}>
     {children}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { A } from 'hookrouter';
 
 import style from './Header.module.scss';
 import { ReactComponent as Logo } from './assets/Logo.svg';
@@ -13,22 +14,22 @@ const MENU: IMenu[] = [
   {
     id: 0,
     value: 'Home',
-    link: '#',
+    link: '/',
   },
   {
     id: 1,
     value: 'Pokédex',
-    link: '#',
+    link: '/pokedex',
   },
   {
     id: 2,
     value: 'Legendaries',
-    link: '#',
+    link: '/legendaries',
   },
   {
     id: 3,
     value: 'Documentation',
-    link: '#',
+    link: '/docs',
   },
 ];
 
@@ -42,9 +43,9 @@ export const Header = () => {
         </div>
         <div className={style.menu}>
           {MENU.map(({ id, value, link }) => (
-            <a key={id} className={style.menuLink} href={link}>
+            <A key={id} className={style.menuLink} href={link}>
               {value}
-            </a>
+            </A>
           ))}
         </div>
       </div>

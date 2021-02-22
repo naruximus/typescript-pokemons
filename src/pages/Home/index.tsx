@@ -11,10 +11,10 @@ export const Home = () => {
       <Header />
       <Layout className={style.contentWrap}>
         <div className={style.contentText}>
-          <Heading level={1}>
+          <Heading component="h1">
             <b>Find</b> all your favorite <b>Pokemon</b>
           </Heading>
-          <Heading level={2}>You can know the type of Pokemon, its strengths, disadvantages and abilities</Heading>
+          <Heading component="h2">You can know the type of Pokemon, its strengths, disadvantages and abilities</Heading>
           <Button onClick={() => console.log(123)}>See Pokemons</Button>
         </div>
         <div className={style.contentParallax}>

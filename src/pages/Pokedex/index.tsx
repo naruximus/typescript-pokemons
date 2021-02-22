@@ -1,3 +1,9 @@
 import React from 'react';
+import { Header } from '../../components';
 
-export const Pokedex = () => <div>Pokedex</div>;
+export const Pokedex = () => (
+  <>
+    <Header />
+    <div>Pokedex</div>
+  </>
+);
