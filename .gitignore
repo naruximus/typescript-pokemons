@@ -24,3 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 src/**.d.ts
+**/*.module.d.ts
+**/*.module.scss.d.ts
