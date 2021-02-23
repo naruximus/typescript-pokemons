@@ -13,7 +13,7 @@ export interface IPokemonProps {
 export const Pokemon: React.FC<IPokemonProps> = ({ id }) => {
   const { data, isLoading } = useData<IPokemon>('getPokemon', { id });
 
-  console.log('data :>> ', data);
+  // console.log('data :>> ', data);
 
   if (isLoading) return <Loader className={style.loader} />;
 

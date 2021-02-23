@@ -6,12 +6,14 @@
     "test:watch": "npx jest --watch",
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
-    "start": "env NODE_ENV=development webpack-dev-server"
+    "start": "env NODE_ENV=development webpack-dev-server",
+    "server": "node src/server/server.js "
   },
   "repository": "git@github.com:naruximus/typescript-pokemons.git",
   "author": "Даня Гребнев <naruximus@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@hapi/hapi": "^20.1.0",
     "classnames": "^2.2.6",
     "hookrouter": "^1.2.5",
     "react": "^17.0.1",
@@ -56,7 +58,8 @@
     "url-loader": "^4.1.1",
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
-    "webpack-dev-server": "^3.11.1"
+    "webpack-dev-server": "^3.11.1",
+    "webpack-node-externals": "^2.5.2"
   },
   "husky": {
     "hooks": {
