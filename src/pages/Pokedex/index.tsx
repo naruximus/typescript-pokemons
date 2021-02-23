@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
 import style from './Pokedex.module.scss';
-import { Heading, Footer, Loader } from '../../components';
+import { Heading, Footer, Loader, Layout } from '../../components';
 import { PokemonCard } from './components';
 import { useData } from '../../hooks/getData';
-
 import { IPokemons, IPokemon } from '../../interface/pokemons';
 import { useDebounce } from '../../hooks/useDebounce';
 
@@ -36,7 +35,7 @@ export const Pokedex = () => {
       <Heading component="h2" className={style.title}>
         {(!isLoading && data && data.total) || 0} <b>Pokemons</b> for you to choose your favorite
       </Heading>
-      <div className={style.contentWrap}>
+      <Layout className={style.contentWrap}>
         <input
           className={style.search}
           type="text"
@@ -50,7 +49,7 @@ export const Pokedex = () => {
         ) : (
           <Loader />
         )}
-      </div>
+      </Layout>
       <Footer />
     </div>
   );
