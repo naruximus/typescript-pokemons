@@ -1,12 +1,17 @@
 @import '../../variables';
+@import '../../breakpoints';
 
 .root {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 88px;
-  max-width: 1125px;
   width: 100%;
+
+  @include media('>phone', '<=tablet') {
+    height: 62px;
+    margin-top: 15px;
+  }
 }
 .wrap {
   display: flex;
@@ -14,6 +19,12 @@
   justify-content: space-between;
   width: 100%;
   height: 22px;
+
+  @include media('>phone', '<=tablet') {
+    flex-direction: column-reverse;
+    height: 50px;
+    margin-bottom: 15px;
+  }
 }
 .text {
   font-family: Karla;
@@ -23,4 +34,17 @@
   line-height: 21px;
 
   color: $dark;
+
+  @include media('>phone', '<=tablet') {
+    margin: 0;
+
+    &:first-of-type {
+      font-family: Source Sans Pro;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
 }

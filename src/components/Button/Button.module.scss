@@ -1,4 +1,5 @@
 @import '../../variables';
+@import '../../breakpoints';
 
 .root {
   border: none;
@@ -12,6 +13,7 @@
   justify-content: center;
   cursor: pointer;
   outline: none;
+  width: 231px;
 
   font-family: Karla;
   font-style: normal;
@@ -23,6 +25,9 @@
   &:active {
     box-shadow: inset 0px -6px 0px rgba(0, 0, 0, 0.18);
     padding-bottom: 6px;
+  }
+  .fullWidth {
+    width: 100%;
   }
 }
 .green {

@@ -2,13 +2,13 @@ import React from 'react';
 import { navigate } from 'hookrouter';
 
 import style from './NotFound.module.scss';
-import { Button } from '../../components';
+import { Button, Layout } from '../../components';
 import { RocketTeam } from './assets';
 import { LinkEnum } from '../../routes';
 
 export const NotFound = () => (
   <div className={style.root}>
-    <div className={style.wrap}>
+    <Layout className={style.wrap}>
       <div className={style.error404}>
         404
         <div className={style.rocketTeam}>
@@ -21,6 +21,6 @@ export const NotFound = () => (
       <Button onClick={() => navigate(LinkEnum.HOME)} color="yellow">
         Return
       </Button>
-    </div>
+    </Layout>
   </div>
 );

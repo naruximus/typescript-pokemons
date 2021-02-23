@@ -1,4 +1,5 @@
 @import '../../variables';
+@import '../../breakpoints';
 
 .root {
   height: 100vh;
@@ -28,12 +29,37 @@
   color: rgba(0, 0, 0, 0.5);
 
   position: relative;
+
+  @include media('>tablet', '<desktop') {
+    font-size: 402px;
+    line-height: 470px;
+  }
+  @include media('>phone', '<tablet') {
+    font-size: 200px;
+    line-height: 234px;
+  }
 }
 .rocketTeam {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 10%;
-  left: 25%;
+  left: 2%;
+  top: 3%;
   max-height: 620px;
+
+  @include media('>tablet', '<desktop') {
+    img {
+      width: 492px;
+    }
+  }
+
+  @include media('>phone', '<tablet') {
+    img {
+      width: 262px;
+    }
+  }
 }
 .text {
   font-family: Karla;
@@ -41,11 +67,26 @@
   font-weight: bold;
   font-size: 48px;
   line-height: 56px;
+  text-align: center;
 
   color: #f2f2f2;
 
   margin-bottom: 80px;
   margin-top: -80px;
+
+  @include media('>tablet', '<desktop') {
+    margin: 30px 0;
+    font-size: 45px;
+    line-height: 53px;
+    max-width: 400px;
+  }
+
+  @include media('>phone', '<tablet') {
+    font-size: 25px;
+    line-height: 29px;
+    margin-top: 45px;
+    margin-bottom: 75px;
+  }
 }
 
 .textBlack {

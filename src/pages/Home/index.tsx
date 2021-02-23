@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { navigate } from 'hookrouter';
 
 import style from './Home.module.scss';
@@ -7,7 +7,12 @@ import { Parallax } from './components';
 import { LinkEnum } from '../../routes';
 
 export const Home = () => {
-  console.log('home :>> ');
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, [window.innerWidth]);
+
   return (
     <div className={style.root}>
       <Layout className={style.contentWrap}>
