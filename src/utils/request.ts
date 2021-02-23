@@ -1,8 +1,27 @@
 import Url from 'url';
 import { getUrlWithParamsConfig } from './getUrlWithParamsConfig';
 
-export const req = async <T>(endpoint: string, query: object): Promise<T> => {
-  const uri = Url.format(getUrlWithParamsConfig(endpoint, query));
+interface IOptions {
+  method: string;
+  body?: string;
+}
 
-  return await fetch(uri).then((res) => res.json());
+interface IGetUrlWithParamsConf {
+  method: string;
+  uri: Partial<URL>;
+  body: object;
+}
+
+export const req = async <T>(endpoint: string, params: object): Promise<T> => {
+  const { method, uri, body }: IGetUrlWithParamsConf = getUrlWithParamsConfig(endpoint, params);
+
+  const options: IOptions = {
+    method,
+  };
+
+  if (Object.keys(params).includes('body')) {
+    options.body = JSON.stringify(body);
+  }
+
+  return await fetch(Url.format(uri), options).then((res) => res.json());
 };
