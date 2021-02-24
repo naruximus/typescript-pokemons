@@ -1,9 +1,17 @@
+const isProd = process.env.NODE_ENV === 'production';
+
+const serverProd = {
+  protocol: 'https',
+  host: 'secure-meadow-03435.herokuapp.com',
+};
+const serverDev = {
+  protocol: 'http',
+  host: 'zar.hosthot.ru',
+};
+
 export const config = {
   client: {
-    server: {
-      protocol: 'http',
-      host: 'zar.hosthot.ru',
-    },
+    server: isProd ? { ...serverProd } : { ...serverDev },
     endpoint: {
       getPokemons: {
         method: 'GET',
