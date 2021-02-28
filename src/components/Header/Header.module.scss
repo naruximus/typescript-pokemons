@@ -27,6 +27,7 @@
   }
 }
 .logo {
+  cursor: pointer;
   .logoDekstop {
     width: 158px;
     height: 63px;
@@ -142,15 +143,28 @@
   position: absolute;
   display: none;
   overflow: hidden;
-  min-height: 100vh;
+  height: 110vh;
   min-width: 100%;
   z-index: 2;
   top: 0;
   left: 0;
   background: #21212180;
+  opacity: 0;
 
   &.active {
     display: block;
+    opacity: 1;
+    animation: animWrap 0.5s;
+    -webkit-animation: animWrap 0.5s;
+  }
+}
+
+@keyframes animWrap {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .mobileMenu {

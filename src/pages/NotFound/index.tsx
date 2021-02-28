@@ -7,7 +7,7 @@ import { RocketTeam } from './assets';
 import { LinkEnum } from '../../routes';
 
 export const NotFound = () => (
-  <div className={style.root}>
+  <main className={style.root}>
     <Layout className={style.wrap}>
       <div className={style.error404}>
         404
@@ -22,5 +22,5 @@ export const NotFound = () => (
         Return
       </Button>
     </Layout>
-  </div>
+  </main>
 );

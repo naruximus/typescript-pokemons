@@ -5,12 +5,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 88px;
+  padding: 40px 0;
   width: 100%;
 
+  @include media('>tablet', '<desktop') {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
   @include media('>phone', '<=tablet') {
-    height: 62px;
-    margin-top: 15px;
+    padding-bottom: 15px;
+    padding-top: 30px;
   }
 }
 .wrap {
@@ -35,6 +40,16 @@
 
   color: $dark;
 
+  @include media('>tablet', '<desktop') {
+    &:first-of-type {
+      font-family: Source Sans Pro;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
   @include media('>phone', '<=tablet') {
     margin: 0;
 
@@ -47,4 +62,7 @@
       text-align: center;
     }
   }
+}
+.backgroundYellow {
+  background: linear-gradient(180deg, #f2b807 0%, #f2b807 100%);
 }
