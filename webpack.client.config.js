@@ -1,8 +1,21 @@
 const path = require('path');
 const HTMLWebpackPlugins = require('html-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
+const isProd = NODE_ENV === 'production';
+
+const devPlugins = [
+  new HTMLWebpackPlugins({
+    template: path.resolve(__dirname, 'public/index.html'),
+  }),
+];
+const prodPlugins = [
+  ...devPlugins,
+  new CopyPlugin({
+    patterns: [{ from: path.resolve(__dirname, 'public'), to: path.resolve(__dirname, 'dist') }],
+  }),
+];
 
 module.exports = {
   resolve: {
@@ -68,14 +81,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HTMLWebpackPlugins({
-      template: path.resolve(__dirname, 'public/index.html'),
-    }),
-    // new CopyPlugin({
-    //   patterns: [{ from: path.resolve(__dirname, 'public'), to: path.resolve(__dirname, 'dist') }],
-    // }),
-  ],
+  plugins: isProd ? prodPlugins : devPlugins,
   devServer: {
     port: 4000,
     // open: 'Google Chrome',
