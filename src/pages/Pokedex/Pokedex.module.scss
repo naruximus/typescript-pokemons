@@ -11,9 +11,6 @@
 .contentWrap {
   margin: 0 auto;
   flex: 1;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-around;
   width: 100%;
 }
 .title {
@@ -54,4 +51,18 @@
   &:focus {
     box-shadow: 0 0 3pt 2pt $third;
   }
+}
+.cardsWrap {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 35px;
+
+  @include media('>phone', '<tablet') {
+    grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
+  }
+}
+.loader {
+  padding: 60px 0;
 }
