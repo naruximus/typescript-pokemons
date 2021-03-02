@@ -1,6 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugins = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -9,12 +9,12 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
   mode: NODE_ENV ? NODE_ENV : 'development',
-  entry: path.resolve(__dirname, 'src/index.ts'),
+  entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
   },
-  // watch: true,
+  watch: true,
   watchOptions: {
     ignored: /node_modules/,
     poll: 1000,
@@ -72,9 +72,9 @@ module.exports = {
     new HTMLWebpackPlugins({
       template: path.resolve(__dirname, 'public/index.html'),
     }),
-    new CopyPlugin({
-      patterns: [{ from: path.resolve(__dirname, 'public'), to: path.resolve(__dirname, 'dist') }],
-    }),
+    // new CopyPlugin({
+    //   patterns: [{ from: path.resolve(__dirname, 'public'), to: path.resolve(__dirname, 'dist') }],
+    // }),
   ],
   devServer: {
     port: 4000,

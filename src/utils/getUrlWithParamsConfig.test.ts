@@ -1,8 +1,9 @@
 import { getUrlWithParamsConfig } from './getUrlWithParamsConfig';
+import { configEndPoints } from '../config';
 
 describe('getUrlWithParamsConfig', () => {
   test('Должна принимать 2 аргумента "getPokemons" и пустой объект, на выходе получить объект с полями method, uri - объект с полями pathname, protocol, host и пустым query, body - пустой объект', () => {
-    const url = getUrlWithParamsConfig('getPokemons', {});
+    const url = getUrlWithParamsConfig(configEndPoints.getPokemons, {});
 
     expect(url).toEqual({
       method: 'GET',
@@ -17,7 +18,7 @@ describe('getUrlWithParamsConfig', () => {
   });
 
   test('Должна принимать 2 аргумента "getPokemons" и query: { name: "Pikachu" }, на выходе получить объект с полями method, uri - объект с полями pathname, protocol, host и query:{ name: "Pikachu" },  body - пустой объект', () => {
-    const url = getUrlWithParamsConfig('getPokemons', { name: 'Pikachu' });
+    const url = getUrlWithParamsConfig(configEndPoints.getPokemons, { name: 'Pikachu' });
 
     expect(url).toEqual({
       method: 'GET',
@@ -34,7 +35,7 @@ describe('getUrlWithParamsConfig', () => {
   });
 
   test('Должна принимать 2 аргумента "getPokemon" и query: { id: 1 }, на выходе получить объект с полями method, uri - объект с полями pathname, protocol, host и query - пустой объект,  body - пустой объект', () => {
-    const url = getUrlWithParamsConfig('getPokemon', { id: 1 });
+    const url = getUrlWithParamsConfig(configEndPoints.getPokemon, { id: 1 });
 
     expect(url).toEqual({
       method: 'GET',
@@ -49,7 +50,7 @@ describe('getUrlWithParamsConfig', () => {
   });
 
   test('Должна принимать 2 аргумента "createPokemon" и query: { name: "Pikachu" }, на выходе получить объект с полями method, uri - объект с полями pathname, protocol, host и query:{},  body - { name: "Pikachu" }', () => {
-    const url = getUrlWithParamsConfig('createPokemon', { name: 'Pikachu' });
+    const url = getUrlWithParamsConfig(configEndPoints.createPokemon, { name: 'Pikachu' });
 
     expect(url).toEqual({
       method: 'POST',
@@ -65,7 +66,7 @@ describe('getUrlWithParamsConfig', () => {
     });
   });
   test('Должна принимать 2 аргумента "updatePokemon" и query: { id: 1 }, на выходе получить объект с полями method, uri - объект с полями pathname, protocol, host и query:{},  body - { id: 1 }', () => {
-    const url = getUrlWithParamsConfig('updatePokemon', { id: 1 });
+    const url = getUrlWithParamsConfig(configEndPoints.updatePokemon, { id: 1 });
 
     expect(url).toEqual({
       method: 'PATCH',
@@ -79,7 +80,7 @@ describe('getUrlWithParamsConfig', () => {
     });
   });
   test('Должна принимать 2 аргумента "deletePokemon" и query: { id: 1 }, на выходе получить объект с полями method, uri - объект с полями pathname, protocol, host и query:{},  body - { id: 1 }', () => {
-    const url = getUrlWithParamsConfig('deletePokemon', { id: 1 });
+    const url = getUrlWithParamsConfig(configEndPoints.deletePokemon, { id: 1 });
 
     expect(url).toEqual({
       method: 'DELETE',

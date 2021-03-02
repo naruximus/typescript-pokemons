@@ -21,3 +21,5 @@ export interface IPokemons {
   total: number;
   pokemons: IPokemon[];
 }
+
+export type ITypes = string[];

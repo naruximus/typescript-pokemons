@@ -13,9 +13,10 @@ module.exports = {
   },
   plugins: ['prettier', 'react', '@typescript-eslint'],
   rules: {
+    'no-underscore-dangle': 'off',
     'arrow-body-style': 'off',
     'no-param-reassign': 'off',
-    'camelcase': 'off',
+    camelcase: 'off',
     'no-return-await': 'off',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
